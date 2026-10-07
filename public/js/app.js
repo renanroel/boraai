@@ -13,7 +13,8 @@ function render(items, target=featuredEl){ target.innerHTML = items.length ? ite
 async function getBusinesses(params=''){ const r=await fetch(`${api}${params}`); if(!r.ok) throw new Error('Falha ao carregar'); return (await r.json()).businesses || []; }
 
 categoriesEl.innerHTML=CATEGORIES.slice(0,6).map(c=>`<a class="category" href="negocios.html?category=${c.id}"><span class="icon">${c.icon}</span><span>${c.name}</span></a>`).join('');
-usefulEl.innerHTML=USEFUL.slice(0,4).map(x=>`<a class="useful" href="tel:${x.number}"><div class="useful-icon">${x.icon}</div><div><b>${x.name}</b><span>${x.number}</span></div></a>`).join('');
+function loadUseful(){fetch('/api/telefones').then(r=>r.json()).then(d=>{const items=d.useful||USEFUL;usefulEl.innerHTML=items.slice(0,4).map(x=>`<a class="useful" href="tel:${x.number}"><div class="useful-icon">${x.icon}</div><div><b>${x.name}</b><span>${x.number}</span></div></a>`).join('')}).catch(()=>{usefulEl.innerHTML=USEFUL.slice(0,4).map(x=>`<a class="useful" href="tel:${x.number}"><div class="useful-icon">${x.icon}</div><div><b>${x.name}</b><span>${x.number}</span></div></a>`).join('')})}
+loadUseful();
 
 (async()=>{try{const items=await getBusinesses(); render(items.filter(b=>b.featured).slice(0,3));}catch{render([]);}})();
 let timer;
