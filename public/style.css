@@ -9,3 +9,5 @@
 
 /* BoraAÍ — seletor visual de ícones */
 .emoji-picker{display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:1px solid #d7e5ef;background:#f8fbfd;border-radius:12px}.emoji-option{width:43px;height:43px;border:1px solid #d7e5ef;background:#fff;border-radius:10px;font-size:22px;cursor:pointer;transition:.15s}.emoji-option:hover{transform:translateY(-2px);border-color:#0077E6}.emoji-option.selected{border:2px solid #0077E6;background:#E6F6FF;box-shadow:0 0 0 2px rgba(0,119,230,.1)}
+
+.admin-help{margin:5px 0 0;color:var(--muted);font-size:12px}.useful-admin-card{margin-top:18px}.useful-admin-card .admin-table-head{align-items:center}
