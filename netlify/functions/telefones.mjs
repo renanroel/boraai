@@ -1,0 +1,8 @@
+import crypto from 'node:crypto';
+import { getUseful, saveUseful } from './_data.mjs';
+import { json, validSession } from './_auth.mjs';
+const clean=(v,max=120)=>String(v??'').trim().slice(0,max);
+const slugify=v=>String(v||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,70);
+function sanitize(input,existing={}){const name=clean(input.name,100),number=clean(input.number,40);const item={...existing,id:existing.id||slugify(name)||crypto.randomUUID(),name,number,icon:clean(input.icon||'☎️',8),updatedAt:new Date().toISOString()};if(!item.name||!item.number)throw new Error('Nome e número são obrigatórios.');return item;}
+export default async req=>{const url=new URL(req.url);try{const items=await getUseful();if(req.method==='GET')return json({useful:items});if(!validSession(req))return json({error:'Não autorizado.'},401);if(req.method==='POST'){const item=sanitize(await req.json());if(items.some(x=>x.id===item.id))item.id=item.id+'-'+crypto.randomUUID().slice(0,6);await saveUseful([item,...items]);return json({useful:item},201)}const id=url.searchParams.get('id');if(!id)return json({error:'Informe o ID do telefone.'},400);const index=items.findIndex(x=>x.id===id);if(index<0)return json({error:'Telefone não encontrado.'},404);if(req.method==='PUT'){items[index]=sanitize(await req.json(),items[index]);await saveUseful(items);return json({useful:items[index]})}if(req.method==='DELETE'){items.splice(index,1);await saveUseful(items);return new Response(null,{status:204})}return json({error:'Método não permitido.'},405)}catch(e){console.error(e);return json({error:e.message||'Erro interno.'},500)}};
+export const config={path:'/api/telefones'};
