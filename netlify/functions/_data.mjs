@@ -49,6 +49,9 @@ export const seedBusinesses = [
 
 export function store() { return getStore('boraai-data'); }
 
+export async function getUseful() { const s=store(); const data=await s.get('useful',{type:'json',consistency:'strong'}); if(Array.isArray(data)) return data; await s.setJSON('useful',useful); return useful; }
+export async function saveUseful(items) { await store().setJSON('useful',items); return items; }
+
 export async function getBusinesses() {
   const s = store();
   const data = await s.get('businesses', { type: 'json', consistency: 'strong' });
