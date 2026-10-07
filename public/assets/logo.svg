@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
+  <title id="title">BoraAÍ</title>
+  <desc id="desc">Logo BoraAÍ, guia local de Boracéia</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00D4FF"/><stop offset="1" stop-color="#0077E6"/></linearGradient>
+  </defs>
+  <g transform="translate(12 12)">
+    <path d="M82 8C42 8 10 39 10 78c0 54 72 91 72 91s72-37 72-91C154 39 122 8 82 8Z" fill="url(#g)"/>
+    <circle cx="82" cy="75" r="50" fill="#F7FBFE" opacity=".98"/>
+    <path d="M43 111c15-8 27-12 39-12 13 0 28 4 43 12l-43 25-39-25Z" fill="#0A2A5B"/>
+    <path d="M47 99V68h23v31H47Zm6-35 5-8 6 8H53Zm25 35V48h21v51H78Zm4-57 8-10 8 10H82Z" fill="#0A2A5B"/>
+    <circle cx="59" cy="76" r="3.5" fill="#F7FBFE"/><circle cx="88" cy="63" r="3.5" fill="#F7FBFE"/>
+    <path d="M44 119c19 5 38 5 57-1" fill="none" stroke="#00D4FF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M145 17l12-9M151 32l15-4" stroke="#00D4FF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="185" y="116" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" letter-spacing="-5" fill="#0A2A5B">Bora</text>
+  <text x="408" y="116" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" letter-spacing="-5" fill="url(#g)">AÍ</text>
+  <path d="M187 136 C300 151 410 151 536 136" fill="none" stroke="#00D4FF" stroke-width="5" stroke-linecap="round"/>
+  <text x="190" y="166" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="3.2" fill="#0A2A5B">TUDO DE BORACÉIA NA PALMA DA SUA MÃO</text>
+</svg>

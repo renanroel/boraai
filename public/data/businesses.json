@@ -1,0 +1,6 @@
+[
+  {"id":"bora-cafe-lanches","name":"BoraAÍ Café & Lanches","category":"alimentacao","desc":"Café, lanches e atendimento local.","phone":"14999990000","whatsapp":"14999990000","address":"Boracéia, SP","hours":"Consulte o estabelecimento","featured":true,"active":true,"emoji":"☕"},
+  {"id":"mercado-boraceia","name":"Mercado Boracéia","category":"mercados","desc":"Mercado completo para o dia a dia.","phone":"14999991111","whatsapp":"14999991111","address":"Boracéia, SP","hours":"Consulte o estabelecimento","featured":true,"active":true,"emoji":"🛒"},
+  {"id":"auto-center-boraceia","name":"Auto Center Boracéia","category":"automotivo","desc":"Serviços e manutenção automotiva.","phone":"14999992222","whatsapp":"14999992222","address":"Boracéia, SP","hours":"Consulte o estabelecimento","featured":true,"active":true,"emoji":"🚗"},
+  {"id":"farmacia-boraceia","name":"Farmácia Boracéia","category":"farmacias","desc":"Medicamentos, higiene e cuidados para sua família.","phone":"14999993333","whatsapp":"14999993333","address":"Boracéia, SP","hours":"Consulte o estabelecimento","featured":false,"active":true,"emoji":"💊"}
+]
