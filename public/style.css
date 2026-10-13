@@ -11,3 +11,42 @@
 .emoji-picker{display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:1px solid #d7e5ef;background:#f8fbfd;border-radius:12px}.emoji-option{width:43px;height:43px;border:1px solid #d7e5ef;background:#fff;border-radius:10px;font-size:22px;cursor:pointer;transition:.15s}.emoji-option:hover{transform:translateY(-2px);border-color:#0077E6}.emoji-option.selected{border:2px solid #0077E6;background:#E6F6FF;box-shadow:0 0 0 2px rgba(0,119,230,.1)}
 
 .admin-help{margin:5px 0 0;color:var(--muted);font-size:12px}.useful-admin-card{margin-top:18px}.useful-admin-card .admin-table-head{align-items:center}
+
+
+/* Responsividade dos resultados de comércios — corrigido para mobile */
+.business-grid,
+.business-grid.wide-grid{grid-template-columns:repeat(3,minmax(0,1fr));min-width:0}
+.business-card{min-width:0}
+.business-body{min-width:0}
+.business-body h3,.business-body p{overflow-wrap:anywhere;word-break:normal}
+.business-image{width:100%;min-width:0}
+.actions{min-width:0;flex-wrap:wrap}
+.actions a{min-width:0;overflow-wrap:anywhere}
+@media(max-width:800px){
+  .business-grid,
+  .business-grid.wide-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .business-image{height:150px}
+  .business-body{padding:16px}
+  .business-body h3{font-size:18px;line-height:1.3}
+  .actions{flex-direction:column}
+  .actions a{width:100%;padding:12px 8px}
+}
+@media(max-width:540px){
+  .business-grid,
+  .business-grid.wide-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+  .business-image{height:180px}
+  .business-body{padding:18px}
+  .business-body h3{font-size:20px;line-height:1.3}
+  .business-body p{font-size:14px;line-height:1.5}
+  .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .actions a{font-size:13px;padding:13px 8px;white-space:normal}
+  .filter-row{gap:8px}
+  .filter{max-width:100%;font-size:12px;padding:9px 12px}
+  .list-title{align-items:flex-start;gap:10px;flex-wrap:wrap}
+  .list-title h2{font-size:25px;line-height:1.2}
+}
+@media(max-width:360px){
+  .business-image{height:155px}
+  .business-body{padding:15px}
+  .actions{grid-template-columns:1fr}
+}
